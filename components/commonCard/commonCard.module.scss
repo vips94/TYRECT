@@ -1,0 +1,44 @@
+@import '@/sass/colors';
+.common-card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+    &:focus-visible{
+        outline:  2px solid #000;
+        border-radius: 32px;
+    }
+
+    .image{
+        align-self: center;
+        margin-bottom: 1rem;
+    }
+
+    .title{
+        color: $ui-action-primary-80;
+        margin-bottom: 1rem;
+        overflow: hidden;
+        // width: 256px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 1.5rem;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+    }
+
+    .content{
+        // width: 256px;
+        color: $ui-text-neutral-40;
+        opacity: 0.75;
+        min-height: 140px;
+        font-size: 1.1rem;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+    }
+     
+    .pointer{
+        cursor: pointer;
+    }
+
+    
+}

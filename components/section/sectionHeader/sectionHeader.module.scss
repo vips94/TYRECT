@@ -1,0 +1,21 @@
+@import '@/sass/colors';
+.section-header {
+    .heading-two{
+        margin: 0;
+        margin-top: 2.4rem;
+        font-size: 3rem;
+        color: $ui-text-neutral-10;
+    }
+
+    .text-dark{
+        color: $ui-text-neutral-50;
+    }
+
+    .text-macro {
+        margin-top: 1.6rem;
+        color: #1e1e1e;
+        line-height:3.8rem;
+        font-size: 1rem;
+        color: $ui-text-neutral-50;
+    }
+}

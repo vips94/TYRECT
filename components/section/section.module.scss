@@ -1,0 +1,34 @@
+@import '@/sass/colors';
+@import '@/sass/variables';
+.section {
+    &.section-relative{
+        position: relative;
+    }
+
+    .bg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        object-fit: contain;
+        background-color: $ui-surface-light-30;
+
+        &.bg-dark {
+            background-color: $ui-action-primary-80;
+        }
+    }
+
+    .section-padding{
+        width: 95%;
+        margin: auto;
+        padding: $dimension-spacing-xxl $dimension-spacing-xxxl;
+
+        .section-padding-content{
+            width: 100%;
+            max-width: $container-width;
+            margin: 0 auto;
+        }
+    }
+}

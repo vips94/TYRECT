@@ -1,0 +1,98 @@
+@import '@/sass/colors';
+@import '@/sass/variables';
+.list-content{
+    position: relative;
+    margin-top: 5rem;
+    z-index: 2;
+    width: 350px;
+    height: 438px;
+    background-color: $ui-text-neutral-10;
+    border-radius: 12px;
+    padding: 1rem;
+    border : 3px solid $ui-svg-light-50;
+    
+    .number-text{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $ui-text-neutral-10;
+        position: absolute;
+        top: -75px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 20px solid $ui-action-primary-80;
+        box-shadow: inset 0px 0px 0px 3px $ui-svg-light-50;
+        font-size: 3rem;
+        color: $ui-svg-light-50;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 900;
+
+        &::before{
+            content: '';
+            position: absolute;
+            width: 147px;
+            height: 147px;
+            top: -20px;
+            left: -20px;
+            border-radius: 50%;
+            border: 3px solid $ui-svg-light-50;
+            
+        }
+    }
+    .content-text{
+        margin-top: 100px;
+        width: 100%;
+        height: calc(100% - 100px - 10px);
+        .heading-one{
+            text-align: center;
+            width: 100% !important;
+            margin-top: 2rem;
+            color: white;
+            font-size: 2rem;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 900;
+        }
+        .text-dark{
+            color: $ui-action-primary-80;
+        }
+        .text-large{
+            width: 100% !important;
+            margin: 2rem 0;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 100;
+            font-size: 1.5rem;
+        }
+    }
+    &.reverse-order{
+        flex-direction: row-reverse;
+        .content-text{
+            text-align: end;
+
+            .text-large{
+                float: right;
+            }
+        }
+    }
+    .hero-image{
+        width: 534px;
+        height: 403px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .why-build-section{
+        .why-build-content{
+            width: 90%;
+            min-width: 90%;
+        }
+    
+        .title-section{
+            .title{
+                text-align: center;
+            }
+        }
+    }
+}

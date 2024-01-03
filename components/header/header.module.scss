@@ -1,0 +1,98 @@
+@import "@/sass/colors";
+.desktop-header {
+  position: fixed;
+  height: 64px;
+  z-index: 999999;
+  width: 100%;
+  background-color: white;
+  .nav-bar {
+    max-width: 1142px;
+    width: 95%;
+    margin: auto;
+  }
+  .logo {
+    font-size: 2rem;
+    color: white;
+    position: relative;
+
+    img {
+      width: 100px;
+      height: 64px;
+      transform: scale(1);
+      object-fit: contain;
+      position: absolute;
+    }
+  }
+
+  .desktop-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+  }
+  .desktop-button {
+    
+  }
+  :global {
+    .ant-layout-header {
+        padding: 0;
+      display: flex;
+      justify-content: space-between;
+      background-color: white;
+
+      .ant-menu {
+        .ant-menu-submenu-active {
+          &::after {
+            border-bottom-color: $ui-svg-light-50 !important;
+          }
+        }
+
+        .ant-menu-submenu-open {
+          &::after {
+            border-bottom-color: $ui-svg-light-50 !important;
+          }
+        }
+      }
+
+      .ant-menu-item {
+        display: flex;
+        align-items: center;
+      }
+
+      .ant-menu-item-active {
+        &::after {
+          border-bottom-color: $ui-svg-light-50 !important;
+        }
+      }
+
+      .ant-menu-item-icon {
+        width: 24px !important;
+        height: 24px !important;
+      }
+
+      .ant-menu-title-content {
+        span,
+        a {
+          font-size: 1rem;
+          font-weight: 400;
+          font-family: "Anton", sans-serif;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+    .desktop-header {  
+        .nav-bar {
+            width: 90%;
+          }    
+        .desktop-menu {
+            display: none;
+        }
+
+        .desktop-button {
+            display: none;
+        }
+      }
+}

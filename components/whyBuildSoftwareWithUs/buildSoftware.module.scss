@@ -1,0 +1,66 @@
+@import '@/sass/colors';
+.why-build-section{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10rem 0; 
+    background-color: $ui-action-primary-80;
+
+    .hero-lottie{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+         
+        div{
+            height: 100%;
+        }
+    }
+
+    .why-build-content{
+        z-index: 2;
+        width: 95%;
+        min-width: 700px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        max-width: 1142px;
+        gap: 2rem;
+    }
+
+    .title-section{
+        .title{
+            margin: 0;
+            font-size: 3rem;
+            color: $ui-text-neutral-10;
+        }
+    }
+    .list-block{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2.6rem;
+        justify-content: center;
+        align-items: flex-start;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .why-build-section{
+        .why-build-content{
+            width: 90%;
+            min-width: 90%;
+        }
+    
+        .title-section{
+            .title{
+                text-align: center;
+            }
+        }
+    }
+}

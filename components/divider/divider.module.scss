@@ -1,0 +1,91 @@
+$waveHeight : 200px;
+
+.divider{
+    width: 100vw;
+    height: $waveHeight;
+    position: absolute;
+    left: 0;
+    transform-origin: center;
+    z-index: 66;
+    overflow: hidden;
+    pointer-events: none;
+
+    .wave {
+        width: 100%;
+        height: 100%;
+        background-size: 1000px $waveHeight;
+        background-repeat: repeat;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform-origin: bottom;
+    }
+
+    .wave1 {
+        animation: waveAnim 12s linear infinite forwards;
+        opacity: 1;
+        z-index: 4;
+        bottom: 0;
+    }
+
+    .wave2{
+        animation: waveAnim1 20s linear infinite forwards;
+        opacity: 0.7;
+        z-index: 3;
+        // bottom: 5px;
+    }
+
+    .wave3{
+        animation: waveAnim 25s linear infinite forwards;
+        opacity: 0.5;
+        z-index: 2;
+        // bottom:10px;
+    }
+
+    .wave4{
+        animation: waveAnim1 30s linear infinite forwards;
+        opacity: 0.2;
+        z-index: 1;
+        // bottom: 15px;
+    }
+
+    @keyframes waveAnim {
+        0%{
+            background-position-x: 1000px;
+        }
+        100%{
+            background-position-x: 0%;
+        }
+    }
+
+    @keyframes waveAnim1 {
+        0%{
+            background-position-x: 0%;
+        }
+        100%{
+            background-position-x: 1000px;
+        }
+    }
+    
+}
+
+// @media screen and (max-width: 1024px) {
+//     .divider{
+//         height: 100px;
+//         .wave {
+//             background-size: 850px 100px;
+//         }
+        
+//     }
+    
+//   }
+  
+//   @media screen and (max-width: 546px) {
+//     .divider{
+//         height: 50px;
+//         .wave {
+//             background-size: 400px 50px;
+//         }
+        
+//     }
+//   }

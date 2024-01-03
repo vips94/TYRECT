@@ -1,0 +1,88 @@
+@import '@/sass/colors';
+@import '@/sass/variables';
+.list-content{
+    z-index: 2;
+    width: 100%;
+    min-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    max-width: $container-width;
+    gap: 2rem;
+    .content-text{
+        
+        .heading-one{
+            margin-top: 2rem;
+            width: 80%;
+            color: white;
+            font-size: 2rem;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 900;
+        }
+        .text-dark{
+            color: $ui-action-primary-80;
+        }
+        .text-large{
+            margin: 2rem 0;
+            width: 80%;
+            letter-spacing: 0.01em;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 100;
+            font-size: 1.5rem;
+        }
+    }
+    &.reverse-order{
+        flex-direction: row-reverse;
+        .content-text{
+            text-align: end;
+
+            .text-large{
+                float: right;
+            }
+        }
+    }
+    .hero-image{
+        width: 50%;
+        height: 50%;
+        max-width: 534px;
+        max-height: 403px;
+        min-width: 300px;
+        min-height: 300px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .list-content{
+        width: 90%;
+        min-width: 90%;
+        flex-direction: column-reverse;
+        .content-text{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            .heading-one{
+                text-align: center;
+                margin: auto;
+            }
+            .text-large{
+                text-align: center;
+                margin: auto;
+            }
+        }
+        &.reverse-order{
+            flex-direction: column-reverse;
+            .content-text{
+                // text-align: center;
+                // margin: auto;
+                .heading-one{
+                    text-align: center;
+                    margin: auto;
+                }
+                .text-large{
+                    float: none;
+                    margin: auto;
+                }
+            }
+        }
+    }
+}

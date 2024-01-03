@@ -1,0 +1,58 @@
+@import '@/sass/colors';
+.faq-item-section{
+    width: 100%;
+
+    :global {
+        .ant-collapse{
+            .ant-collapse-item{
+                .ant-collapse-header{
+                    height: 5.5rem;
+                    display: flex;
+                    justify-content: space-between;
+                    flex-direction: row-reverse;
+                    align-items: center;
+                    background-color: $ui-action-primary-80;
+                    .ant-collapse-expand-icon{
+                        svg{
+                            width: 30px;
+                            height: 30px;
+
+                            path{
+                                fill: $ui-text-neutral-10;
+                            }
+                        }
+                    }
+                    .ant-collapse-header-text{
+                        font-size: 1.8rem;
+                        line-height: 1.1;
+                        font-weight: 500;
+                        color: $ui-text-neutral-10;
+                    }
+                }
+                .ant-collapse-content{
+                    .ant-collapse-content-box{
+                        font-size: 1.3rem;
+                        font-weight: 500;
+                        color: $ui-text-neutral-50;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .faq-item-section{
+        :global {
+            .ant-collapse{
+                .ant-collapse-item{
+                    .ant-collapse-header{
+                        height: auto;
+                        
+                    }
+                    
+                }
+            }
+        }
+    }
+}

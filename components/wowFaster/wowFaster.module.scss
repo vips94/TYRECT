@@ -1,0 +1,50 @@
+@import '@/sass/colors';
+.wow-faster-section{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10rem 0; 
+
+    .wow-faster-content{
+        z-index: 2;
+        width: 95%;
+        min-width: 700px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        max-width: 1142px;
+        gap: 2rem;
+    }
+
+    .title-section{
+        .title{
+            margin: 0;
+            font-size: 3rem;
+            color: $ui-text-neutral-50;
+        }
+    }
+    .list-block{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .wow-faster-section{
+        .wow-faster-content{
+            width: 90%;
+            min-width: 90%;
+        }
+    
+        .title-section{
+            .title{
+                text-align: center;
+            }
+        }
+    }
+}

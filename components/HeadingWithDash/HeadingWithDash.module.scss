@@ -1,0 +1,25 @@
+.heading-with-dash{
+    display: flex;
+    column-gap: 1.6rem;
+    align-items: center;
+    .dash-line{
+        width: 28px;
+        height: 2px;
+    }
+
+    .heading-seven{
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (max-width: '710px') {
+    .heading-with-dash{
+        .dash-line{
+            width: 24px;
+        }
+
+        .heading-seven{
+            font-size: 1.4rem;
+        }
+    }
+}
