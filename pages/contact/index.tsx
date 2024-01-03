@@ -63,7 +63,7 @@ const Contact = () => {
           </Form>
         </div>
         <img
-          src={"./images/footerCTA/Footer_CTA2.svg"}
+          src='./images/footerCTA/Footer_Cta2.svg'
           alt="more"
           className={styles["hero-image"]}
         />
