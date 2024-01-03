@@ -1,48 +1,135 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Layout, Menu } from "antd";
 import styles from "./header.module.scss";
 import Link from "next/link";
 import { getNavItems } from "@/constant/navItems";
 import Button from "../elements/button";
+import menuAnimation from "@/public/LottieFiles/menu.json";
+import Lottie from "lottie-react";
 
 const { Header: AntHeader } = Layout;
-
+let mobile = null as any;
 const Header = () => {
   const [currentKey, setCurrentKey] = useState("");
 
   const handleMenuItemClick = (e: any) => {
     setCurrentKey(e.key);
   };
+  const hamburgerRef = useRef(null) as any;
+  const [showMenu, setShowMenu] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    mobile = window?.matchMedia("(max-width: 768px)");
+    resizeProjectList(mobile);
+
+    mobile.addEventListener("change", resizeProjectList);
+
+    return () => {
+      mobile.removeEventListener("change", resizeProjectList);
+    };
+  }, []);
+
+  const resizeProjectList = (e: any) => {
+    if (mobile.matches) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  };
+
+  const toggleMenu = (isTrue: boolean) => {
+    setShowMenu(isTrue);
+    if (isTrue) {
+      hamburgerRef.current.playSegments([0, 15], true, "menuAnim");
+    } else {
+      hamburgerRef.current.playSegments([16, 0], true, "menuAnim");
+    }
+  };
+
+  const MobileNavBar = () => {
+    return (
+      <Layout className={styles["desktop-header"]}>
+        <section className={styles["nav-bar"]}>
+          <AntHeader>
+            <Menu
+              className={styles["desktop-menu"]}
+              mode="horizontal"
+              disabledOverflow
+              // onClick={handleMenuItemClick}
+              // selectedKeys={[currentKey]}
+              items={getNavItems(setCurrentKey)}
+              triggerSubMenuAction="hover"
+            />
+            <div className={styles["desktop-button"]}>
+              <Button
+                linkProps={{
+                  path: "/contact",
+                  target: "_self",
+                }}
+              >
+                {`Let's Connect`}
+              </Button>
+            </div>
+          </AntHeader>
+        </section>
+      </Layout>
+    );
+  };
+
+  const DesktopNavBar = () => {
+    return (
+      <Layout className={styles["desktop-header"]}>
+        <section className={styles["nav-bar"]}>
+          <AntHeader>
+            <Link href={"/"} className={styles.logo}>
+              <img src="./images/logo.png" />
+            </Link>
+            <Menu
+              className={styles["desktop-menu"]}
+              mode="horizontal"
+              disabledOverflow
+              // onClick={handleMenuItemClick}
+              // selectedKeys={[currentKey]}
+              items={getNavItems(setCurrentKey)}
+              triggerSubMenuAction="hover"
+            />
+            <div className={styles["desktop-button"]}>
+              <Button
+                linkProps={{
+                  path: "/contact",
+                  target: "_self",
+                }}
+              >
+                {`Let's Connect`}
+              </Button>
+            </div>
+          </AntHeader>
+        </section>
+      </Layout>
+    );
+  };
 
   return (
-    <Layout className={styles["desktop-header"]}>
-      <section className={styles["nav-bar"]}>
-        <AntHeader>
+    <>
+      {isMobile && (
+        <>
           <Link href={"/"} className={styles.logo}>
             <img src="./images/logo.png" />
           </Link>
-          <Menu
-            className={styles["desktop-menu"]}
-            mode="horizontal"
-            disabledOverflow
-            // onClick={handleMenuItemClick}
-            // selectedKeys={[currentKey]}
-            items={getNavItems(setCurrentKey)}
-            triggerSubMenuAction="hover"
+          <Lottie
+            lottieRef={hamburgerRef}
+            animationData={menuAnimation}
+            className={styles.breadcrumb}
+            loop={false}
+            autoplay={false}
+            onClick={() => toggleMenu(!showMenu)}
           />
-          <div className={styles["desktop-button"]}>
-            <Button
-              linkProps={{
-                path: "/contact",
-                target: "_self",
-              }}
-            >
-              {`Let's Connect`}
-            </Button>
-          </div>
-        </AntHeader>
-      </section>
-    </Layout>
+        </>
+      )}
+      {isMobile && showMenu && <MobileNavBar />}
+      {!isMobile && <DesktopNavBar />}
+    </>
   );
 };
 

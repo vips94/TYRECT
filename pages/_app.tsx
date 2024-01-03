@@ -1,5 +1,4 @@
 import Footer from '@/components/footer'
-import FooterCTA from '@/components/footerCTA'
 import Header from '@/components/header'
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
