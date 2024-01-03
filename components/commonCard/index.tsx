@@ -31,7 +31,7 @@ const CommonCard:FC<CommonCardProps> = (props) => {
             <div className={`heading-five ${styles['title']}`}>{title}</div>
             <div className={`text-small ${styles.content}`}>{content}</div>
             {
-                linkUrl && <Button onClick={()=>onButtonClick()} btnType= 'link' linkProps={{path: linkUrl, target: '_blank'}} arrowIcon>
+                linkUrl && <Button onClick={()=>onButtonClick()} btnType= 'link' linkProps={{path: linkUrl, target: '_self'}} arrowIcon>
                     Learn More
                 </Button>
             }

@@ -34,7 +34,7 @@ const Header = () => {
             <Button
               linkProps={{
                 path: "/contact",
-                target: "_blank",
+                target: "_self",
               }}
             >
               {`Let's Connect`}

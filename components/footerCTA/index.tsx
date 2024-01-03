@@ -45,7 +45,7 @@ const FooterCTA: FC<FooterCTAProps> = (props) => {
           </h1>
           <Button linkProps={{
                 path: '/contact',
-                target: '_blank'
+                target: '_self'
             }}>
                 { `Let's Connect`}
             </Button>

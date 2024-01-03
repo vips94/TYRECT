@@ -90,7 +90,7 @@ const HeroSection:FC<HeroSectionProps> = (props) => {
                                     ):(
                                         <Button linkProps={{
                                             path: linkProps?.href || '#',
-                                            target: linkProps?.target || '_blank'
+                                            target: linkProps?.target || "_self"
                                         }}>
                                             {linkProps?.label || 'Try For Free'}
                                         </Button>
