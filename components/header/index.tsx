@@ -20,7 +20,7 @@ const Header = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    mobile = window?.matchMedia("(max-width: 768px)");
+    mobile = window?.matchMedia("(max-width: 860px)");
     resizeProjectList(mobile);
 
     mobile.addEventListener("change", resizeProjectList);
@@ -49,9 +49,9 @@ const Header = () => {
 
   const MobileNavBar = () => {
     return (
-      <Layout className={styles["desktop-header"]}>
+      <Layout className={styles["mobile-header"]}>
         <section className={styles["nav-bar"]}>
-          <AntHeader>
+          {/* <AntHeader>
             <Menu
               className={styles["desktop-menu"]}
               mode="horizontal"
@@ -71,7 +71,7 @@ const Header = () => {
                 {`Let's Connect`}
               </Button>
             </div>
-          </AntHeader>
+          </AntHeader> */}
         </section>
       </Layout>
     );
@@ -113,7 +113,7 @@ const Header = () => {
   return (
     <>
       {isMobile && (
-        <>
+        <nav className={styles['nav-section']}>
           <Link href={"/"} className={styles.logo}>
             <img src="./images/logo.png" />
           </Link>
@@ -125,7 +125,7 @@ const Header = () => {
             autoplay={false}
             onClick={() => toggleMenu(!showMenu)}
           />
-        </>
+        </nav>
       )}
       {isMobile && showMenu && <MobileNavBar />}
       {!isMobile && <DesktopNavBar />}
