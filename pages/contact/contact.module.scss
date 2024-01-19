@@ -1,5 +1,5 @@
-@import '@/sass/colors';
-.contact-section{
+@import "@/sass/colors";
+.contact-section {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -8,7 +8,7 @@
   padding-top: 64px;
   min-height: calc(100vh - 120px);
 
-  .container{
+  .container {
     margin: 1rem 0;
     width: 60%;
     min-width: 700px;
@@ -26,100 +26,159 @@
     align-items: center;
     padding: 1rem 2rem;
 
-    .form-container{
-        width: 40%;
-        h1{
-            font-size: 3rem;
-            font-weight: 600;
-            color: $ui-action-primary-60;
+    .form-container {
+      width: 40%;
+      h1 {
+        font-size: 3rem;
+        font-weight: 600;
+        color: $ui-action-primary-60;
+      }
+
+      .form {
+        padding-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 1.5rem;
+        width: 100%;
+
+        .status {
+          font-size: 16px;
+          white-space: nowrap;
         }
 
-        :global {
-            .ant-form{
-                margin: 1rem 0;
+        .name,
+        .message,
+        .email {
+          height: 48px;
+          background-color: $ui-action-primary-10;
+          width: 100%;
+          font-size: 2vh;
+          padding-left: 1rem;
+          border: 1px solid $ui-action-primary-50;
+          border-radius: 5px;
+          transition: 0.3s ease all;
+          pointer-events: all;
 
-                .ant-form-item{
+          &:focus {
+            border-color: $ui-svg-light-50 !important;
+          }
 
-                    .ant-input-affix-wrapper{
-                        height: 48px;
-                        background-color: $ui-action-primary-10;
+          &:focus-visible,
+          &:hover,
+          &:focus-within {
+            border-color: $ui-svg-light-50 !important;
+            
+          }
 
-                        &:focus{
-                            border-color: $ui-svg-light-50 !important;
-                        }
-
-                        &:focus-visible, &:hover, &:focus-within{
-                            border-color: $ui-svg-light-50 !important;
-                        }
-                    }
-                    .ant-input-textarea-affix-wrapper{
-                        height: 70px;
-                        background-color: $ui-action-primary-10;
-
-                        &:focus{
-                            border-color: $ui-svg-light-50 !important;
-                        }
-
-                        &:focus-visible, &:hover, &:focus-within{
-                            border-color: $ui-svg-light-50 !important;
-                        }
-
-                        .ant-input{
-                            min-height: 65px;
-                            max-height: 200px;
-                            background-color: $ui-action-primary-10;
-    
-                            &:focus{
-                                border-color: $ui-svg-light-50 !important;
-                            }
-    
-                            &:focus-visible, &:hover, &:focus-within{
-                                border-color: $ui-svg-light-50 !important;
-                            }
-                        }
-                    }
-                    .ant-input{
-                        background-color: $ui-action-primary-10;
-
-                        &:focus{
-                            border-color: $ui-svg-light-50 !important;
-                        }
-
-                        &:focus-visible, &:hover, &:focus-within{
-                            border-color: $ui-svg-light-50 !important;
-                        }
-                    }
-                }
-            }
+          &:focus-visible{
+            outline: $ui-svg-light-50;
+          }
         }
+
+        .message {
+          padding: 0.3rem 0.5rem;
+          padding-left: 1rem;
+          min-height: 65px;
+          max-height: 200px;
+          background-color: $ui-action-primary-10;
+        }
+      }
+
+    //   :global {
+    //     .ant-form {
+    //       margin: 1rem 0;
+
+    //       .ant-form-item {
+    //         .ant-input-affix-wrapper {
+    //           height: 48px;
+    //           background-color: $ui-action-primary-10;
+
+    //           &:focus {
+    //             border-color: $ui-svg-light-50 !important;
+    //           }
+
+    //           &:focus-visible,
+    //           &:hover,
+    //           &:focus-within {
+    //             border-color: $ui-svg-light-50 !important;
+    //           }
+    //         }
+    //         .ant-input-textarea-affix-wrapper {
+    //           height: 70px;
+    //           background-color: $ui-action-primary-10;
+
+    //           &:focus {
+    //             border-color: $ui-svg-light-50 !important;
+    //           }
+
+    //           &:focus-visible,
+    //           &:hover,
+    //           &:focus-within {
+    //             border-color: $ui-svg-light-50 !important;
+    //           }
+
+    //           .ant-input {
+    //             min-height: 65px;
+    //             max-height: 200px;
+    //             background-color: $ui-action-primary-10;
+
+    //             &:focus {
+    //               border-color: $ui-svg-light-50 !important;
+    //             }
+
+    //             &:focus-visible,
+    //             &:hover,
+    //             &:focus-within {
+    //               border-color: $ui-svg-light-50 !important;
+    //             }
+    //           }
+    //         }
+    //         .ant-input {
+    //           background-color: $ui-action-primary-10;
+
+    //           &:focus {
+    //             border-color: $ui-svg-light-50 !important;
+    //           }
+
+    //           &:focus-visible,
+    //           &:hover,
+    //           &:focus-within {
+    //             border-color: $ui-svg-light-50 !important;
+    //           }
+    //         }
+    //       }
+    //     }
+    //   }
     }
 
-    .hero-image{
-        width: 300px;
-        height: 303px;
+    .hero-image {
+      width: 300px;
+      height: 303px;
     }
   }
 }
 
 @media screen and (max-width: 768px) {
-    .contact-section{
-        .container{
-          gap: 2rem;
-          width: 90%;
-          min-width: 90%;
-          flex-direction: column-reverse;
-      
-          .form-container{
-              width: 100%;
-              h1{
-                  font-size: 2.5rem;
-              }
-          }
-      
-          .hero-image{
-              width: 300px;
-              height: 303px;
-          }
+  .contact-section {
+    .container {
+      gap: 2rem;
+      width: 90%;
+      min-width: 90%;
+      flex-direction: column-reverse;
+
+      .form-container {
+        width: 100%;
+        h1 {
+          font-size: 2.5rem;
         }
       }
+
+      .hero-image {
+        width: 300px;
+        height: 303px;
+      }
+    }
+  }
 }

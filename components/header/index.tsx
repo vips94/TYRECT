@@ -2,10 +2,11 @@ import React, { useState, useEffect, useRef } from "react";
 import { Layout, Menu } from "antd";
 import styles from "./header.module.scss";
 import Link from "next/link";
-import { getNavItems } from "@/constant/navItems";
+import { getNavItems , getMobileNavItem} from "@/constant/navItems";
 import Button from "../elements/button";
 import menuAnimation from "@/public/LottieFiles/menu.json";
 import Lottie from "lottie-react";
+import { arrowRight } from "../icons/svgIcons";
 
 const { Header: AntHeader } = Layout;
 let mobile = null as any;
@@ -14,6 +15,7 @@ const Header = () => {
 
   const handleMenuItemClick = (e: any) => {
     setCurrentKey(e.key);
+    setShowMenu(false);
   };
   const hamburgerRef = useRef(null) as any;
   const [showMenu, setShowMenu] = useState(false);
@@ -39,9 +41,13 @@ const Header = () => {
   };
 
   const toggleMenu = (isTrue: boolean) => {
-    setShowMenu(isTrue);
+    setTimeout(()=>{
+      setShowMenu(isTrue);
+    },200)
+    
     if (isTrue) {
       hamburgerRef.current.playSegments([0, 15], true, "menuAnim");
+      
     } else {
       hamburgerRef.current.playSegments([16, 0], true, "menuAnim");
     }
@@ -49,19 +55,21 @@ const Header = () => {
 
   const MobileNavBar = () => {
     return (
-      <Layout className={styles["mobile-header"]}>
+      <Layout className={`${styles["mobile-header"]}`}>
         <section className={styles["nav-bar"]}>
-          {/* <AntHeader>
-            <Menu
+          <AntHeader>
+          <Menu
               className={styles["desktop-menu"]}
-              mode="horizontal"
+              mode="inline"
               disabledOverflow
-              // onClick={handleMenuItemClick}
+              onClick={handleMenuItemClick}
               // selectedKeys={[currentKey]}
-              items={getNavItems(setCurrentKey)}
-              triggerSubMenuAction="hover"
+              items={getMobileNavItem(currentKey)}
+              expandIcon={arrowRight}
+              forceSubMenuRender
             />
-            <div className={styles["desktop-button"]}>
+            
+            {/* <div className={styles["desktop-button"]}>
               <Button
                 linkProps={{
                   path: "/contact",
@@ -70,8 +78,8 @@ const Header = () => {
               >
                 {`Let's Connect`}
               </Button>
-            </div>
-          </AntHeader> */}
+            </div> */}
+          </AntHeader>
         </section>
       </Layout>
     );
@@ -91,7 +99,7 @@ const Header = () => {
               disabledOverflow
               // onClick={handleMenuItemClick}
               // selectedKeys={[currentKey]}
-              items={getNavItems(setCurrentKey)}
+              items={getNavItems(currentKey)}
               triggerSubMenuAction="hover"
             />
             <div className={styles["desktop-button"]}>

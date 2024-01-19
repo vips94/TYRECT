@@ -96,6 +96,59 @@ export const getNavItems = (setCurrentKey:any) => {
     ]
 }
 
+export const getMobileNavItem = (setCurrentKey:any) => {
+    return[
+        {
+            label:(
+                <span>
+                    Product Platform
+                </span>
+            ),
+            key: 'product-platform-submenu',
+            children: [
+                {
+                    label:(
+                        <Link href={'/product-overview'}>
+                            Product Overview
+                        </Link>
+                    ),
+                    key: 'product-overview',
+                    icon: getIcon('VirtualMachine')
+                },
+                ...getGroup(navLinks.productPlatform),
+            ]
+        },
+        {
+            label:(
+                <span>
+                    Edge Solutions
+                </span>
+            ),
+            key: 'edge-solution-submenu',
+            children: getGroup(
+                [navLinks.edgeSolutions[0]] // [navLinks.edgeSolutions]
+            )
+        },
+        {
+            label:(
+                <Link href={'/locations'}>
+                    Locations
+                </Link>
+            ),
+            key: 'locations',
+        },
+        {
+            label:(
+                <span>
+                    Resources
+                </span>
+            ),
+            key: 'resources-submenu',
+            children: getGroup([navLinks.resources[0]])
+        },
+    ]
+}
+
 export const rootSubMenuKeys = [
     'product-platform-submenu',
     'edge-solution-submenu',
