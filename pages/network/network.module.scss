@@ -1,0 +1,13 @@
+@import "@/sass/colors";
+.network-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 64px;
+  min-height: calc(100vh - 120px);
+  background: #f1f6ff;
+
+}
+

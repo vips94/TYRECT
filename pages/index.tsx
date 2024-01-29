@@ -37,8 +37,8 @@ export default function Home() {
           imageName={useCaseAnimationData?.gaming}
         />
         <IndustryUseCases />
-        <WowFaster />
-        <WhyBuildSoftwareWithUs />
+        <WowFaster data={homePage}/>
+        <WhyBuildSoftwareWithUs data={homePage}/>
         <FAQ />
         <FooterCTA
           title={homePage?.footerCTA?.title}

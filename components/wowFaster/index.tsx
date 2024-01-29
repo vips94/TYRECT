@@ -1,17 +1,22 @@
-import React from "react";
+import React, {FC} from "react";
 import { homePage } from "@/constant/homePage";
 import styles from "./wowFaster.module.scss";
 import WowItem from "./wowItem";
 
-const WowFaster = () => {
+type WowFasterProps = {
+  data: any;
+}
+
+const WowFaster:FC<WowFasterProps> = (props) => {
+  const {data} = props;
   return (
     <section className={styles["wow-faster-section"]}>
       <div className={styles["wow-faster-content"]}>
         <div className={styles["title-section"]}>
-          <h1 className={styles.title}>{homePage?.wowFaster.title}</h1>
+          <h1 className={styles.title}>{data?.wowFaster?.title}</h1>
         </div>
         <div className={styles["list-block"]}>
-          {homePage?.wowItem.map((item) => {
+          {data?.wowItem?.map((item:any) => {
             return (
               <WowItem
                 title={item?.title}

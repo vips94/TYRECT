@@ -6,12 +6,12 @@ export const navLinks = {
             children: [
                 {
                     label: 'Network Solutions',
-                    key: 'network-solutions',
+                    key: 'network',
                     iconName: 'VirtualMachine',
                 },
                 {
                     label: 'Embedded Solutions',
-                    key: 'embedded-solutins',
+                    key: 'embedded',
                     iconName: 'BlockStorage',
                     disabled: false,
                     hidden: false
