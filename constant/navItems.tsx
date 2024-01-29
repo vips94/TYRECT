@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { navLinks } from "./header";
+import { arrowDown } from "@/components/icons/svgIcons";
+
 
 const getIcon = (iconName:string) => {
     
@@ -47,52 +49,54 @@ export const getNavItems = (setCurrentKey:any) => {
     return[
         {
             label:(
-                <span>
-                    Product Platform
-                </span>
-            ),
-            key: 'product-platform-submenu',
-            children: [
-                {
-                    label:(
-                        <Link href={'/product-overview'}>
-                            Product Overview
-                        </Link>
-                    ),
-                    key: 'product-overview',
-                    icon: getIcon('VirtualMachine')
-                },
-                ...getGroup(navLinks.productPlatform),
-            ]
-        },
-        {
-            label:(
-                <span>
-                    Edge Solutions
-                </span>
-            ),
-            key: 'edge-solution-submenu',
-            children: getGroup(
-                [navLinks.edgeSolutions[0]] // [navLinks.edgeSolutions]
-            )
-        },
-        {
-            label:(
-                <Link href={'/locations'}>
-                    Locations
+                <Link href={'/'}>
+                    Home
                 </Link>
             ),
-            key: 'locations',
+            key: 'home',
         },
         {
             label:(
-                <span>
-                    Resources
+                <span style={{display:"flex",}}>
+                    Impact
+                    <div style={{width: '25px', height:"12px"}}>
+                        {arrowDown}
+                    </div>
                 </span>
             ),
-            key: 'resources-submenu',
-            children: getGroup([navLinks.resources[0]])
+            key: 'Impact-submenu',
+            children: [
+                ...getGroup(navLinks.Impact),
+            ]
         },
+        // {
+        //     label:(
+        //         <span>
+        //             Edge Solutions
+        //         </span>
+        //     ),
+        //     key: 'edge-solution-submenu',
+        //     children: getGroup(
+        //         [navLinks.edgeSolutions[0]] // [navLinks.edgeSolutions]
+        //     )
+        // },
+        {
+            label:(
+                <Link href={'/aboutUs'}>
+                    About Us
+                </Link>
+            ),
+            key: 'aboutUs',
+        },
+        // {
+        //     label:(
+        //         <span>
+        //             Resources
+        //         </span>
+        //     ),
+        //     key: 'resources-submenu',
+        //     children: getGroup([navLinks.resources[0]])
+        // },
     ]
 }
 
@@ -100,52 +104,51 @@ export const getMobileNavItem = (setCurrentKey:any) => {
     return[
         {
             label:(
-                <span>
-                    Product Platform
-                </span>
-            ),
-            key: 'product-platform-submenu',
-            children: [
-                {
-                    label:(
-                        <Link href={'/product-overview'}>
-                            Product Overview
-                        </Link>
-                    ),
-                    key: 'product-overview',
-                    icon: getIcon('VirtualMachine')
-                },
-                ...getGroup(navLinks.productPlatform),
-            ]
-        },
-        {
-            label:(
-                <span>
-                    Edge Solutions
-                </span>
-            ),
-            key: 'edge-solution-submenu',
-            children: getGroup(
-                [navLinks.edgeSolutions[0]] // [navLinks.edgeSolutions]
-            )
-        },
-        {
-            label:(
-                <Link href={'/locations'}>
-                    Locations
+                <Link href={'/'}>
+                    Home
                 </Link>
             ),
-            key: 'locations',
+            key: 'home',
         },
         {
             label:(
                 <span>
-                    Resources
+                    Impact
                 </span>
             ),
-            key: 'resources-submenu',
-            children: getGroup([navLinks.resources[0]])
+            key: 'Impact-submenu',
+            children: [
+                ...getGroup(navLinks.Impact),
+            ]
         },
+        // {
+        //     label:(
+        //         <span>
+        //             Edge Solutions
+        //         </span>
+        //     ),
+        //     key: 'edge-solution-submenu',
+        //     children: getGroup(
+        //         [navLinks.edgeSolutions[0]] // [navLinks.edgeSolutions]
+        //     )
+        // },
+        {
+            label:(
+                <Link href={'/aboutUs'}>
+                    About Us
+                </Link>
+            ),
+            key: 'aboutUs',
+        },
+        // {
+        //     label:(
+        //         <span>
+        //             Resources
+        //         </span>
+        //     ),
+        //     key: 'resources-submenu',
+        //     children: getGroup([navLinks.resources[0]])
+        // },
     ]
 }
 

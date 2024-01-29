@@ -5,7 +5,7 @@
     margin-top: 5rem;
     z-index: 2;
     width: 350px;
-    height: 438px;
+    height: 400px;
     background-color: $ui-text-neutral-10;
     border-radius: 12px;
     padding: 1rem;
@@ -51,7 +51,7 @@
             width: 100% !important;
             margin-top: 2rem;
             color: white;
-            font-size: 2rem;
+            font-size: 1.6rem;
             font-family: 'Roboto', sans-serif;
             font-weight: 900;
         }
@@ -63,7 +63,8 @@
             margin: 2rem 0;
             font-family: 'Roboto', sans-serif;
             font-weight: 100;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
+            text-align: center;
         }
     }
     &.reverse-order{

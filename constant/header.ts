@@ -1,42 +1,42 @@
 export const navLinks = {
-    productPlatform : [
+    Impact : [
         {
-            label: 'EDGE COMPUTING',
-            key: 'edge-computing',
+            label: 'Services',
+            key: 'sevices',
             children: [
                 {
-                    label: 'Virtual Machines',
-                    key: 'virtual-machines',
+                    label: 'Network Solutions',
+                    key: 'network-solutions',
                     iconName: 'VirtualMachine',
                 },
                 {
-                    label: 'Bare Metal',
-                    key: 'edge-bare-metal',
+                    label: 'Embedded Solutions',
+                    key: 'embedded-solutins',
                     iconName: 'BlockStorage',
                     disabled: false,
                     hidden: false
                 },
             ]
         },
-        {
-            label: 'STORAGE',
-            key: 'storage',
-            hidden: false,
-            children : [
-                {
-                    label: 'Object-Storage',
-                    key: 'object-storage',
-                    iconName: 'ObjectStorage',
-                    disabled: false
-                },
-                {
-                    label: 'Block-Storage',
-                    key: 'block-storage',
-                    iconName: 'BlockStorage',
-                    disabled: false
-                }
-            ]
-        }
+        // {
+        //     label: 'STORAGE',
+        //     key: 'storage',
+        //     hidden: false,
+        //     children : [
+        //         {
+        //             label: 'Object-Storage',
+        //             key: 'object-storage',
+        //             iconName: 'ObjectStorage',
+        //             disabled: false
+        //         },
+        //         {
+        //             label: 'Block-Storage',
+        //             key: 'block-storage',
+        //             iconName: 'BlockStorage',
+        //             disabled: false
+        //         }
+        //     ]
+        // }
     ],
     edgeSolutions: [
         {

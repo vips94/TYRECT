@@ -2,7 +2,7 @@ export const homePage = {
     hero : {
         tag: 'REAL-TIME DATA, CLOSER TO END USERS',
         title: 'A Different Kind Of Custom Software Development Company',
-        subTitle: 'Get the software you need to transform your business. Taazaa delivers the power of “wow!”',
+        subTitle: 'Get the software you need to transform your business. TYRECT delivers the power of “wow!”',
         btnLabel: 'Contact Us'
     },
     industryUseCases: {
@@ -82,20 +82,20 @@ export const homePage = {
     whyBuildItem: [
         {
             number: 1,
-            title: 'Human-Centric Design',
-            subTitle: 'We take a design-first approach that’s hyper-focused on user experience (UX) and user interaction (UI) design. Our goal is to delight your end-users.',
+            title: 'Tailored Solutions',
+            subTitle: 'We understand that each organization has unique security needs. Our solutions are customized to address specific challenges and align with your business objectives.',
             isTextDark: true,
         },
         {
             number: 2,
-            title: 'Fanatic Focus on You',
-            subTitle: 'We are here to realize your vision and quickly turn an abstract idea into functioning software—built by a highly skilled team.',
+            title: 'Continuous Monitoring',
+            subTitle: 'Our commitment to ongoing monitoring and regularsecurity audits ensures that your network remains resilient in the face of everevolving threats.',
             isTextDark: true,
         },
         {
             number: 3,
-            title: 'Easy to Work With',
-            subTitle: 'We value collaboration over contracts. We walk a mile in the end-users’ shoes and work on making their journey easier.',
+            title: 'Expert Team',
+            subTitle: 'Backed by a team of seasoned cybersecurity professionals, we bring a wealth of experience and expertise to every project, ensuring the highest standard of security services.',
             isTextDark: true,
         },
     ],
